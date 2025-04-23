@@ -463,7 +463,7 @@
             }));
             
             // 获取所有历史记录（包括隐藏的）
-            const allHistoryRows = Array.from(historyTableBody.rows).concat(Array.from(hiddenHistoryTableBody.rows));
+            const allHistoryRows = Array.from(document.getElementById('historyTableBody').rows).concat(Array.from(document.getElementById('hiddenHistoryTableBody').rows));
             window.alertData.history = allHistoryRows.map(row => ({
                 time: row.cells[0].textContent,
                 type: row.cells[1].textContent,
@@ -813,7 +813,7 @@
 
                 // 更新表格
                 updateAlertTable(newAlerts);
-            }, 10000); // 每10秒更新一次
+            }, 5000); // 每5秒更新一次
         }
 
         // 更新告警表格
@@ -1110,6 +1110,6 @@
         });
     </script>
     <hr>
-    <a href="index.html" ><h align="center">返回</h>
+    <a href="report.html" ><h align="center">报告生成</h>
 </body>
 </html>
